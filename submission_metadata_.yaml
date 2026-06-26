@@ -1,0 +1,58 @@
+============================================================================
+Team identity
+============================================================================
+team_name: "Compass"
+primary_contact:
+  name: "Naveen V Hiremath"
+  email: "vhnaveen5@gmail.com"
+  phone: "+91 7676191308"
+team_members:
+  - name: "Naveen V Hiremath"
+    email: "vhnaveen5@gmail.com"
+    role: "Team Lead & Solo participant"
+
+============================================================================
+Code and reproducibility
+============================================================================
+github_repo: "https://github.com/nvh00215-cpu/Redrob-ranker.git"
+sandbox_link: "https://huggingface.co/spaces/NaveenVH0/Redrob-ranker"
+reproduce_command: "python rank.py candidates.jsonl submission.csv"
+
+============================================================================
+Compute environment
+============================================================================
+compute:
+  platform: "Local Machine"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+============================================================================
+AI tools declaration
+============================================================================
+ai_tools_used:
+  - "Qwen"
+
+ai_usage_summary: |
+  Used Qwen 3.7 Plus for architectural discussion, designing the heuristic scoring logic, generating regex patterns for the 'Shipper vs. Researcher' lexicon, and code review. Strictly adhered to the hackathon's privacy and compute constraints: zero candidate data was ever fed into the LLM. The final ranking pipeline is 100% deterministic, offline, CPU-only Python code engineered by the team.
+
+============================================================================
+Approach summary
+============================================================================
+methodology_summary: |
+  Context-aware heuristic ranker. We avoided naive keyword matching by cross-referencing titles against career descriptions to catch "keyword stuffers". The system applies hard filters for consulting-only backgrounds and pure researchers (using a Shipper vs. Researcher regex lexicon). It calculates job-hopper math (avg tenure < 18mo) and applies a behavioral reality multiplier using Redrob signals (ghost filtering for inactive users). Finally, it awards bonus points for JD "nice-to-haves" (LoRA, HR-tech, distributed systems). Runs in ~15 seconds on CPU.
+
+============================================================================
+Declarations
+============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
