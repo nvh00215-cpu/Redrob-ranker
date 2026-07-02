@@ -16,6 +16,7 @@ Code and reproducibility
 ============================================================================
 github_repo: "https://github.com/nvh00215-cpu/Redrob-ranker.git"
 sandbox_link: "https://huggingface.co/spaces/NaveenVH0/Redrob-ranker"
+demo vide: "https://youtu.be/1zR_oM9bVMo"
 reproduce_command: "python rank.py candidates.jsonl submission.csv"
 
 ============================================================================
